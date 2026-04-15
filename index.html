@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Domain Portfolio | Richard G.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark-bg: #0a0a0a;
+            --card-bg: #161616;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+            --accent-blue: #0084ff;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container { max-width: 1000px; width: 100%; }
+        
+        .lang-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .lang-btn {
+            background: var(--card-bg);
+            border: 1px solid #333;
+            color: var(--text-main);
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+        .lang-btn.active { border-color: var(--gold); color: var(--gold); }
+
+        header { text-align: center; margin-bottom: 40px; }
+        h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        .contact-info { color: var(--gold); font-weight: bold; line-height: 1.6; }
+        .contact-info a { color: var(--gold); text-decoration: none; display: block; font-size: 0.9rem; }
+
+        .counter-section { margin-top: 10px; opacity: 0.7; }
+
+        .featured-card {
+            background: linear-gradient(145deg, #1e1e1e, #111);
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .featured-name { font-size: 4rem; font-weight: 800; color: var(--gold); margin: 0; }
+        .status-tag { 
+            display: inline-block; 
+            background: rgba(212, 175, 55, 0.2); 
+            color: var(--gold); 
+            padding: 5px 15px; 
+            border-radius: 50px; 
+            font-size: 0.7rem; 
+            text-transform: uppercase; 
+            margin-bottom: 15px;
+        }
+        
+        .domain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .domain-card {
+            background: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+        }
+        .name { font-size: 1.4rem; font-weight: 700; margin-bottom: 5px; }
+        
+        .contact-section {
+            background: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 40px auto;
+        }
+        .contact-section h2 { text-align: center; color: var(--gold); margin-bottom: 30px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-dim); }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            background: #000;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            border: none;
+        }
+        .btn-gold { background: var(--gold); color: #000; }
+        .btn-outline { border: 1px solid var(--accent-blue); color: var(--accent-blue); background: transparent; }
+
+        footer { margin-top: 60px; color: var(--text-dim); font-size: 0.8rem; text-align: center; border-top: 1px solid #333; padding: 30px 0; }
+        [dir="rtl"] { text-align: right; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="lang-selector">
+            <button class="lang-btn active" onclick="setLanguage('en')">English</button>
+            <button class="lang-btn" onclick="setLanguage('ar')">العربية</button>
+            <button class="lang-btn" onclick="setLanguage('ru')">Русский</button>
+            <button class="lang-btn" onclick="setLanguage('es')">Español</button>
+            <button class="lang-btn" onclick="setLanguage('zh')">中文</button>
+        </div>
+
+        <header>
+            <h1 id="main-title">Premium Domain Assets</h1>
+            <div class="contact-info">
+                <a href="mailto:28qa@proton.me">28qa@proton.me</a>
+                <a href="mailto:fromcom@yahoo.com">fromcom@yahoo.com</a>
+            </div>
+            <div class="counter-section">
+                <img src="https://hitwebcounter.com/counter/counter.php?page=yrneira_portfolio&style=0006&nbdigits=5&type=page&initCount=0" border="0" />
+            </div>
+        </header>
+
+        <div class="featured-card">
+            <span id="featured-tag" class="status-tag">Exclusive Opportunity</span>
+            <h2 class="featured-name">28.qa</h2>
+            <p id="featured-price" style="font-weight: bold; margin: 15px 0;">Price: Inquire for Private Sale</p>
+            <p id="featured-desc" style="color: var(--text-dim); margin-bottom: 25px;">Rare 2-digit premium Qatar domain. Direct acquisition only.</p>
+            <button onclick="document.getElementById('contact').scrollIntoView()" class="btn btn-gold" style="max-width: 250px; margin: 0 auto;">SUBMIT INQUIRY</button>
+        </div>
+
+        <div class="domain-grid" id="grid"></div>
+
+        <section class="contact-section" id="contact">
+            <h2 id="contact-title">Contact Broker</h2>
+            <div class="form-group">
+                <label id="label-name">Full Name</label>
+                <input type="text" id="name" placeholder="John Doe">
+            </div>
+            <div class="form-group">
+                <label id="label-domain">Domain of Interest</label>
+                <input type="text" id="domain" placeholder="e.g. 28.qa">
+            </div>
+            <div class="form-group">
+                <label id="label-msg">Message / Offer</label>
+                <textarea id="message" rows="5" placeholder="Your message here..."></textarea>
+            </div>
+            <button onclick="sendEmail()" class="btn btn-gold" id="btn-send">SEND MESSAGE</button>
+        </section>
+
+        <footer id="footer-text">
+            Secure digital asset brokerage. &copy; 2026 Richard G.
+        </footer>
+    </div>
+
+    <script>
+        const translations = {
+            en: { title: "Premium Domain Assets", tag: "Exclusive Opportunity", price: "Price: Inquire for Private Sale", desc: "Rare 2-digit premium Qatar domain. Direct acquisition only.", contact: "Contact Broker", lname: "Full Name", ldomain: "Domain of Interest", lmsg: "Message / Offer", bsend: "SEND MESSAGE", view: "View Asset", footer: "Secure digital asset brokerage. © 2026 Richard G.", dir: "ltr" },
+            ar: { title: "أصول النطاقات المميزة", tag: "فرصة حصرية", price: "السعر: استفسار للبيع الخاص", desc: "نطاق قطري مميز من رقمين. استحواذ مباشر فقط.", contact: "اتصل بالوسيط", lname: "الاسم الكامل", ldomain: "النطاق المطلوب", lmsg: "الرسالة / العرض", bsend: "إرسال الرسالة", view: "عرض الأصول", footer: "وساطة الأصول الرقمية الآمنة. © 2026 ريتشارد جي.", dir: "rtl" },
+            ru: { title: "Премиальные Доменные Активы", tag: "Эксклюзивная возможность", price: "Цена: По запросу", desc: "Редкий 2-значный премиум-домен Катара.", contact: "Связаться с брокером", lname: "Полное имя", ldomain: "Интересующий домен", lmsg: "Сообщение", bsend: "ОТПРАВИТЬ", view: "Посмотреть", footer: "Безопасные сделки. © 2026 Ричард Г.", dir: "ltr" },
+            es: { title: "Activos de Dominios Premium", tag: "Oportunidad Exclusiva", price: "Precio: Consultar Venta Privada", desc: "Dominio premium de 2 dígitos en Qatar. Adquisición directa.", contact: "Contactar Agente", lname: "Nombre Completo", ldomain: "Dominio de Interés", lmsg: "Mensaje / Oferta", bsend: "ENVIAR MENSAJE", view: "Ver Activo", footer: "Brokerage de activos digitales seguros. © 2026 Richard G.", dir: "ltr" },
+            zh: { title: "优质域名资产", tag: "独家机会", price: "价格：私下咨询", desc: "稀有的卡塔尔 2 位数字顶级域名。", contact: "联系经纪人", lname: "全名", ldomain: "感兴趣的域名", lmsg: "信息 / 报价", bsend: "发送信息", view: "查看资产", footer: "安全数字资产经纪业务。© 2026 Richard G。", dir: "ltr" }
+        };
+
+        const otherDomains = ["uaedr.ae", "dronescop.com", "aereogulf.com", "uaeflytaxis.ae", "uaeflytaxis.com", "opsdrones.com", "flytaxis.ae", "9o32.com", "x47.info", "xa94.com"];
+
+        function renderGrid(viewText) {
+            const grid = document.getElementById('grid');
+            grid.innerHTML = '';
+            otherDomains.forEach(d => {
+                grid.innerHTML += `<div class="domain-card"><div class="name">${d}</div><a href="https://www.afternic.com/domain/${d}" target="_blank" class="btn btn-outline">${viewText}</a></div>`;
+            });
+        }
+
+        function setLanguage(lang) {
+            const t = translations[lang];
+            document.getElementById('main-title').innerText = t.title;
+            document.getElementById('featured-tag').innerText = t.tag;
+            document.getElementById('featured-price').innerText = t.price;
+            document.getElementById('featured-desc').innerText = t.desc;
+            document.getElementById('contact-title').innerText = t.contact;
+            document.getElementById('label-name').innerText = t.lname;
+            document.getElementById('label-domain').innerText = t.ldomain;
+            document.getElementById('label-msg').innerText = t.lmsg;
+            document.getElementById('btn-send').innerText = t.bsend;
+            document.getElementById('footer-text').innerHTML = t.footer;
+            renderGrid(t.view);
+            document.body.dir = t.dir;
+        }
+
+        function sendEmail() {
+            const name = document.getElementById('name').value;
+            const domain = document.getElementById('domain').value;
+            const msg = document.getElementById('message').value;
+            const body = `Name: ${name}%0ADomain: ${domain}%0AMessage: ${msg}`;
+            window.location.href = `mailto:28qa@proton.me?subject=Inquiry for ${domain}&body=${body}`;
+        }
+
+        setLanguage('en');
+    </script>
+</body>
+</html>
